@@ -1,0 +1,284 @@
+/* Mantener el header sticky
+.navbar {
+    position: relative;
+    top: 0;
+    z-index: 1030;
+} */
+
+/* ===========================
+   ESTILOS GENERALES
+=========================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9fafb;
+    color: #333;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+.navbar {
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;  /* hace que se quede fijo arriba */
+    top: 0;
+    z-index: 1030;
+    margin-bottom: 0 !important;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #2c3e50 !important;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #0d6efd !important;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    margin-left: 10px;
+    transition: color 0.3s, background 0.3s;
+    border-radius: 6px;
+    padding: 8px 12px;
+}
+
+.navbar-nav .nav-link:hover {
+    background: #f1f3f5;
+    color: #0d6efd !important;
+}
+
+/* ===========================
+   BOTONES
+=========================== */
+.btn-outline-danger {
+    border: 1px solid #dc3545;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-danger:hover {
+    background: #dc3545;
+    color: #fff !important;
+}
+
+/* ===========================
+   CARRITO
+=========================== */
+.carrito-icon a {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.carrito-icon span {
+    background: #dc3545;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    margin-left: 6px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        margin-left: 0;
+        margin-bottom: 5px;
+    }
+}
+
+
+/* ===========================
+   CONTENEDOR DEL CATÁLOGO
+=========================== */
+.catalogo-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ===========================
+   TARJETAS DE PRODUCTOS
+=========================== */
+.producto-card .card {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.producto-card .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+/* Imagen más grande y ordenada */
+.producto-card .carousel-inner img {
+    height: 300px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+    transition: transform 0.3s ease;
+}
+
+.producto-card .carousel-inner img:hover {
+    transform: scale(1.05);
+}
+
+/* Badge de color */
+.producto-card .carousel-item span {
+    font-size: 0.85rem;
+    padding: 5px 12px;
+    border-radius: 6px;
+    background: rgba(0,0,0,0.65);
+}
+
+/* ===========================
+   CUERPO DE LA CARD
+=========================== */
+.producto-card .card-body {
+    flex: 1;
+    padding: 25px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.producto-card .card-title {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #0d6efd;
+    margin-bottom: 10px;
+}
+
+.producto-card .card-text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Precio */
+.producto-card p {
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #222;
+    font-size: 1.1rem;
+}
+
+/* ===========================
+   FORMULARIO DENTRO DE LA CARD
+=========================== */
+.producto-card .form-control,
+.producto-card .form-select {
+    border-radius: 10px;
+    font-size: 0.95rem;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    text-align: center;
+    padding: 12px;
+}
+
+.producto-card .form-control:focus,
+.producto-card .form-select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13,110,253,0.15);
+}
+
+/* Botón */
+.producto-card .btn-primary {
+    border-radius: 12px;
+    font-weight: 600;
+    padding: 14px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.producto-card .btn-primary:hover {
+    background: #0b5ed7;
+    transform: translateY(-3px);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 992px) {
+    .row {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .producto-card .carousel-inner img {
+        height: 250px;
+    }
+}
+
+
+/* ===========================
+   TÍTULO DEL CATÁLOGO
+=========================== */
+h2 {
+    text-align: center;
+    font-weight: 800;   /* súper bold */
+    font-size: 2rem;    /* tamaño más grande */
+    color: #222;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+/* Línea decorativa debajo del título */
+h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #0d6efd;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Fondo general de la página */
+body {
+    background-color: #f4f4f4; /* 🔥 gris claro, menos brillo que el blanco */
+    color: #222;
+}
+
+
+
+/* ==============================
+   CENTRAR LOGIN EN PANTALLA
+============================== */
+.login-page {
+    min-height: 50vh; /* ocupa toda la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f4f4; /* mismo fondo gris suave */
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px; /* 🔥 más grande que antes */
+    background: #fff;
+    border-radius: 12px;
+    padding: 40px 30px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+
+
+
+
+
+
+
